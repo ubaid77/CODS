@@ -8,8 +8,8 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose")
 
-// mongoose.connect("mongodb://localhost/cods_app", { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect("mongodb+srv://dbAdmin:Ubaid-2017@cluster0-taqcn.mongodb.net/cods_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost/cods_app", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb+srv://dbAdmin:Ubaid-2017@cluster0-taqcn.mongodb.net/cods_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
 app.use(flash());
@@ -84,8 +84,8 @@ app.post("/cods/signup",function(req, res){
         
     User.register(newUser, req.body.password, function(err, user){
         if(err){
-            // req.flash('error',err);
-            return res.render("signup",{title:'Create Account'})
+            req.flash('error',err);
+            return res.render("signup",{messages: req.flash('error'),title:'Create Account'})
         }
         passport.authenticate("local")(req, res, function(){
             res.redirect("/cods");
