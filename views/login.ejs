@@ -1,0 +1,49 @@
+<%- include('partials/header'); -%>
+
+<div class="container" id="login-form">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title py-3 px-5" style="text-align:center;">Login</h2>
+            <hr>
+            <form class="py-3 px-3" action="/cods/login" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-secondary btn-lg btn-block py-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer'); -%>

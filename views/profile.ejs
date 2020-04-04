@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+
+<div class="container py-5"  id="profile">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-lg-4" style="border-right: 5px solid black;">
+            <h1><%= currentUser.fname+" "+ currentUser.lname %></h1>
+            <h3 class="text-muted"><%= "@"+ currentUser.username %></h3>
+        </div>
+        <div class="col-md-8 col-sm-12 col-lg-8 px-5">
+            <h3 class="my-5">My Bookings</h3>
+            <% foundUser.services.forEach(function(service){ %>
+                <p>
+                    <h4 class="text-muted"> <%= service.bookingDate.toDateString() %> </h4>
+                    <h5> <%= service.address %> </h5>
+                    <h5> <%= service.phone %> </h5>
+                    <h5> <%= service.serviceDate %> </h5>
+                    <h5> <%= service.serviceTime %> </h5>
+                    
+                </p>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('partials/footer'); -%>

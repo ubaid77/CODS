@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta charset="utf-8">
+    	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2:700|Roboto:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        <link rel="shortcut icon" type="image/png" href="/stylesheets/favicon.png">
+    </head>
+    <body>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+        
+          <a class="navbar-brand" href="/cods">CODS</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-5">
+              <a class="nav-item nav-link active px-5" href="/cods">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link  px-5" href="/cods/aboutus">About Us</a>
+              <div class="nav-item dropdown px-5">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Our Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Carpenter</a>
+                  <a class="dropdown-item" href="#">Electrician</a>
+                  <a class="dropdown-item" href="/cods/massage-for-men" target="_blank">Massage for Men</a>
+                  <a class="dropdown-item" href="#">Massage for Women</a>
+                  <a class="dropdown-item" href="/cods/salon-at-home" target="_blank">Salon at Home for Women</a>
+                  <a class="dropdown-item" href="#">Packers and Movers</a>
+                  <a class="dropdown-item" href="#">Hairstyling and Makeup</a>
+                  <a class="dropdown-item" href="#">Plumber</a>
+                  <a class="dropdown-item" href="#">Pest Control</a>
+                  <a class="dropdown-item" href="/cods/ac-service" target="_blank">AC Service and Repair</a>
+                </div>
+              </div>
+              <% if(!currentUser){ %>
+              <a class="nav-item nav-link" id="login" href="/cods/signup">Login/Sign Up</a>
+              <% } else{ %>
+                          <div class="nav-item dropdown" id="login">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i><img src="/stylesheets/user.png"></i> <%= currentUser.username %>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item"  href="/cods/profile">Profile</a>
+                              <hr>
+                              <a class="dropdown-item"  href="/cods/logout">Logout</a>
+                            </div>
+                          </div>
+              <% } %>
+            </div>
+          </div>
+        
+      </nav>

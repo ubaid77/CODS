@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Roboto';
+    background:#F7F8FA;
+}
+.services:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.services{
+    color: black;
+}
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+   padding-bottom: 10px;
+   padding-top: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.content{
+    background:#F5F5F5;
+}
+
+/*.text{*/
+/*    line-height: 2.6;*/
+/*}*/
+.rating{
+    color: #FFC107;
+}
+#mainNav{
+    padding-bottom: 0;
+}
+#mainNav .navbar-brand{
+    font-family: 'Baloo Da 2';
+    font-size: 2em;
+}
+#avatar{
+    width:132px;
+    border-radius: 25%;
+}
+
+#home-jumbo {
+    margin-top: 66px;
+    height: 380px;
+    background: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#salon-jumbo {
+    margin-top: 66px;
+    margin-bottom: 0;
+    height: 380px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+#ac-jumbo {
+    margin-top: 66px;
+    margin-bottom: 0;
+    height: 380px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtedl8P6mjKj4fYIOVI9GCzUvEIfi2s5juztGSGaU2xWkUGFzK);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+#massage-men-jumbo {
+    margin-top: 66px;
+    margin-bottom: 0;
+    height: 380px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://res.cloudinary.com/urbanclap/image/upload/fl_progressive,t_medium_res_template/categories/category_v2/category_ceaa58e0.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+
+#aboutus{
+    margin: 80px;
+   
+}
+
+#signup, #login-form, #booking, #confirmation{
+    margin: 80px;
+    width: 50%;
+    background: white;
+    padding:0;
+}
+#flash{
+    margin-top: 80px;
+    width: 50%;
+    text-align: center;
+}
+#profile{
+    margin: 80px;
+    
+    background: white;
+}
+@media screen and (max-width: 480px) {
+  #signup, #login-form, #booking{
+      width: 100%;
+  }
+}
+
+@media screen and (min-width: 695px) {
+  #login{
+    margin-left: 400px;
+}
+}
+
+
+#features .card-body{
+    height: 300px;
+    text-align: center;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    width: 192.58px;
+}
+#submit{
+    width: 100%;
+}

@@ -1,0 +1,138 @@
+<%- include('partials/header'); -%>
+
+
+        <% if(messages && messages.length>0){ %>
+            <div class="container" id="flash">
+                <div class="alert alert-danger"  role="alert">
+                    <%= messages %>
+                </div>
+            </div>
+        <% } %>
+
+
+<div class="container" id="signup">
+    
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title py-3 px-5" style="text-align:center;">Sign Up</h2>
+            
+            
+            <hr>
+                <form class="needs-validation py-3 px-3" action="/cods/signup" method="POST" novalidate>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom01">First name</label>
+                            <input type="text" class="form-control" name="fname" id="validationCustom01"  required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustom02">Last name</label>
+                            <input type="text" class="form-control" name="lname" id="validationCustom02"  required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationCustomUsername">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                </div>
+                                <input type="text" class="form-control" id="validationCustomUsername" name="username" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!--<div class="col-md-6 mb-3">-->
+                            <label for="validationCustom03">Email</label>
+                            <input type="email" class="form-control" id="validationCustom03" name="email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        <!--</div>-->
+                    </div>
+                    <div class="form-group">
+                        <!--<div class="col-md-6 mb-3">-->
+                            <label for="validationCustom03">Password</label>
+                            <input type="password" class="form-control" id="validationCustom03" name="password"  aria-describedby="passwordHelpBlock" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                            </small>
+                            <div class="invalid-feedback">
+                                Please provide a valid password.
+                            </div>
+                        <!--</div>-->
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Agree to terms and conditions
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <a class="px-3" href="/cods/login">Already a user? Log In</a>
+                </form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer'); -%>
