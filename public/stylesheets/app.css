@@ -37,12 +37,24 @@ body{
 .rating{
     color: #FFC107;
 }
+
+.btn-group-lg>.btn, .btn-lg {
+    width: 192.58px;
+}
+#submit{
+    width: 100%;
+}
+
 #mainNav{
     padding-bottom: 0;
 }
 #mainNav .navbar-brand{
     font-family: 'Baloo Da 2';
     font-size: 2em;
+}
+#features .card-body{
+    height: 300px;
+    text-align: center;
 }
 #avatar{
     width:132px;
@@ -98,7 +110,7 @@ body{
    
 }
 
-#signup, #login-form, #booking, #confirmation{
+#signup, #login-form, #booking, #confirmation, #sorry{
     margin: 80px;
     width: 50%;
     background: white;
@@ -127,14 +139,5 @@ body{
 }
 
 
-#features .card-body{
-    height: 300px;
-    text-align: center;
-}
 
-.btn-group-lg>.btn, .btn-lg {
-    width: 192.58px;
-}
-#submit{
-    width: 100%;
-}
+

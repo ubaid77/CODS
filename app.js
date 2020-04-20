@@ -75,6 +75,10 @@ app.get("/cods/login", function(req, res) {
     res.render("login",{title:'Login'})
 })
 
+app.get("/cods/sorry", function(req, res) {
+    res.render("sorry",{title:'Service not available'})
+})
+
 app.post("/cods/signup",function(req, res){
     var newUser = new User({
         fname: req.body.fname,
