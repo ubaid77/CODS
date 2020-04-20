@@ -8,8 +8,8 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose")
 
-// mongoose.connect("mongodb://localhost/cods_app", { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect("mongodb+srv://dbAdmin:Ubaid-2017@cluster0-taqcn.mongodb.net/cods_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb+srv://dbAdmin:Ubaid-2017@cluster0-taqcn.mongodb.net/cods_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
 app.use(flash());
