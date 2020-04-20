@@ -9,9 +9,10 @@ var express = require("express"),
     passportLocalMongoose = require("passport-local-mongoose")
 
 mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect("mongodb+srv://dbAdmin:Ubaid-2017@cluster0-taqcn.mongodb.net/cods_app?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
+
+//=============App Config=================//
 app.use(flash());
 
 app.use(require("express-session")({
@@ -33,6 +34,7 @@ app.use(function(req, res,next){
     next();
 })
 
+//====================Index Routes====================//
 
 app.get("/",function(req, res){
     res.redirect("/cods")
@@ -42,6 +44,24 @@ app.get("/cods",function(req, res){
     res.render("home",{title:'CODS'})
     
 })
+
+app.get("/cods/aboutus", function(req, res) {
+    res.render("aboutus",{title:'About us'})
+})
+
+app.get("/cods/signup", function(req, res) {
+    res.render("signup", { messages: req.flash('error'),title:'Create Account' })
+})
+
+app.get("/cods/login", function(req, res) {
+    res.render("login",{title:'Login'})
+})
+
+app.get("/cods/sorry", function(req, res) {
+    res.render("sorry",{title:'Service not available'})
+})
+
+//=============Service Routes=======================//
 
 app.get("/cods/salon-at-home",function(req, res) {
     res.render("salon-at-home",{title:'Salon At Home'})
@@ -63,22 +83,8 @@ app.get("/cods/booking-confirmed",isLoggedIn, function(req, res) {
     res.render("booking-confirmed",{title:'Booking Confirmed'})  
 })
 
-app.get("/cods/aboutus", function(req, res) {
-    res.render("aboutus",{title:'About us'})
-})
 
-app.get("/cods/signup", function(req, res) {
-    res.render("signup", { messages: req.flash('error'),title:'Create Account' })
-})
-
-app.get("/cods/login", function(req, res) {
-    res.render("login",{title:'Login'})
-})
-
-app.get("/cods/sorry", function(req, res) {
-    res.render("sorry",{title:'Service not available'})
-})
-
+//==========POST Routes==========================//
 app.post("/cods/signup",function(req, res){
     var newUser = new User({
         fname: req.body.fname,
@@ -117,7 +123,7 @@ app.post("/cods/service-booking", function(req, res){
             req.user.services.push(newservice);
             req.user.save();
             res.redirect("/cods/booking-confirmed")
-            console.log(serviceTime)
+            
         }
     })
 })
@@ -138,6 +144,8 @@ app.get("/cods/logout", function(req, res) {
     res.redirect("/cods");
 })
 
+
+//=======================MiddleWare===========================//
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
